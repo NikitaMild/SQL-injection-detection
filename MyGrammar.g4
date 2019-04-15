@@ -1,20 +1,13 @@
 grammar MyGrammar;
 
-select: SELECT STAR FROM WORD;
-
+sentence: words* EOF ;
+words: SELECT STAR FROM WORD ;
 // SKIP
+WS : [ \t\r\n]+ -> skip ;
 
-SPACE:                               [ \t\r\n]+    -> channel(HIDDEN);
-SPEC_MYSQL_COMMENT:                  '/*!' .+? '*/' -> channel(HIDDEN);
-COMMENT_INPUT:                       '/*' .*? '*/' -> channel(HIDDEN);
-LINE_COMMENT:                        (
-                                       ('-- ' | '#') ~[\r\n]* ('\r'? '\n' | EOF)
-                                       | '--' ('\r'? '\n' | EOF)
-                                     ) -> channel(HIDDEN);
-
-SELECT              : 'SELECT';
-STAR                : '*';
-FROM                :'FROM';
-fragment LOWERCASE  : [a-z] ;
-fragment UPPERCASE  : [A-Z] ;
-WORD                : (LOWERCASE | UPPERCASE | '_')+ ;
+SELECT  : 'SELECT';
+STAR  : '*' ;
+FROM  : 'FROM' ;
+LOWERCASE  : [a-z] ;
+UPPERCASE  : [A-Z] ;
+WORD : (LOWERCASE | UPPERCASE)+ ;
