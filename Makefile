@@ -15,6 +15,7 @@ clean:
 	rm -f $(Lexer).py
 	rm -f $(Lexer).pyc
 	rm -f $(Grammar).tokens
+	rm -f $(Lexer).tokens
 	rm -f $(Listener).py
 	rm -f $(Listener).pyc
 	rm -f $(Parser).py
