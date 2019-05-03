@@ -4,9 +4,9 @@ MyListener=$(gram)Listener
 MyParser=$(gram)Parser
 path_to_dir=/home/cucumber/kursuch/4/litegramm/$(gram)/
 
-MyGrammar: create1 move1
+mygrammar: create1 move1
 
-ANTLR4: create2 move2
+antlr4: create2 move2
 
 create1: $(gram)
 	antlr4 -Dlanguage=Python2 $(gram).g4

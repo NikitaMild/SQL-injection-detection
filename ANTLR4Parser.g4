@@ -281,8 +281,8 @@ alternative
    ;
 
 element
-   : labeledElement (ebnfSuffix |)
-   | atom (ebnfSuffix |)
+   : labeledElement
+   | atom
    | ebnf
    | actionBlock QUESTION?
    ;

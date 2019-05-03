@@ -3,7 +3,7 @@
 from __future__ import print_function
 from antlr4 import *
 from io import StringIO
-
+from LexerAdaptor import LexerAdaptor
 
 def serializedATN():
     with StringIO() as buf:
@@ -534,63 +534,63 @@ class ANTLR4Lexer(LexerAdaptor):
     ACTION_CONTENT = 60
     UNTERMINATED_CHAR_SET = 61
 
-    modeNames = [ u"DEFAULT_MODE", u"Argument", u"Action", u"Options", u"Tokens", 
+    modeNames = [ u"DEFAULT_MODE", u"Argument", u"Action", u"Options", u"Tokens",
                   u"Channels", u"LexerCharSet" ]
 
     literalNames = [ u"<INVALID>",
-            u"'options'", u"'tokens'", u"'channels'", u"'import'", u"'fragment'", 
-            u"'lexer'", u"'parser'", u"'grammar'", u"'protected'", u"'public'", 
-            u"'private'", u"'returns'", u"'locals'", u"'throws'", u"'catch'", 
+            u"'options'", u"'tokens'", u"'channels'", u"'import'", u"'fragment'",
+            u"'lexer'", u"'parser'", u"'grammar'", u"'protected'", u"'public'",
+            u"'private'", u"'returns'", u"'locals'", u"'throws'", u"'catch'",
             u"'finally'", u"'mode'" ]
 
     symbolicNames = [ u"<INVALID>",
-            u"TOKEN_REF", u"RULE_REF", u"LEXER_CHAR_SET", u"DOC_COMMENT", 
-            u"BLOCK_COMMENT", u"LINE_COMMENT", u"INT", u"STRING_LITERAL", 
-            u"UNTERMINATED_STRING_LITERAL", u"BEGIN_ARGUMENT", u"BEGIN_ACTION", 
-            u"OPTIONS", u"TOKENS", u"CHANNELS", u"IMPORT", u"FRAGMENT", 
-            u"LEXER", u"PARSER", u"GRAMMAR", u"PROTECTED", u"PUBLIC", u"PRIVATE", 
-            u"RETURNS", u"LOCALS", u"THROWS", u"CATCH", u"FINALLY", u"MODE", 
-            u"COLON", u"COLONCOLON", u"COMMA", u"SEMI", u"LPAREN", u"RPAREN", 
-            u"LBRACE", u"RBRACE", u"RARROW", u"LT", u"GT", u"ASSIGN", u"QUESTION", 
-            u"STAR", u"PLUS_ASSIGN", u"PLUS", u"OR", u"DOLLAR", u"RANGE", 
-            u"DOT", u"AT", u"POUND", u"NOT", u"ID", u"WS", u"ERRCHAR", u"END_ARGUMENT", 
-            u"UNTERMINATED_ARGUMENT", u"ARGUMENT_CONTENT", u"END_ACTION", 
+            u"TOKEN_REF", u"RULE_REF", u"LEXER_CHAR_SET", u"DOC_COMMENT",
+            u"BLOCK_COMMENT", u"LINE_COMMENT", u"INT", u"STRING_LITERAL",
+            u"UNTERMINATED_STRING_LITERAL", u"BEGIN_ARGUMENT", u"BEGIN_ACTION",
+            u"OPTIONS", u"TOKENS", u"CHANNELS", u"IMPORT", u"FRAGMENT",
+            u"LEXER", u"PARSER", u"GRAMMAR", u"PROTECTED", u"PUBLIC", u"PRIVATE",
+            u"RETURNS", u"LOCALS", u"THROWS", u"CATCH", u"FINALLY", u"MODE",
+            u"COLON", u"COLONCOLON", u"COMMA", u"SEMI", u"LPAREN", u"RPAREN",
+            u"LBRACE", u"RBRACE", u"RARROW", u"LT", u"GT", u"ASSIGN", u"QUESTION",
+            u"STAR", u"PLUS_ASSIGN", u"PLUS", u"OR", u"DOLLAR", u"RANGE",
+            u"DOT", u"AT", u"POUND", u"NOT", u"ID", u"WS", u"ERRCHAR", u"END_ARGUMENT",
+            u"UNTERMINATED_ARGUMENT", u"ARGUMENT_CONTENT", u"END_ACTION",
             u"UNTERMINATED_ACTION", u"ACTION_CONTENT", u"UNTERMINATED_CHAR_SET" ]
 
-    ruleNames = [ u"DOC_COMMENT", u"BLOCK_COMMENT", u"LINE_COMMENT", u"INT", 
-                  u"STRING_LITERAL", u"UNTERMINATED_STRING_LITERAL", u"BEGIN_ARGUMENT", 
-                  u"BEGIN_ACTION", u"OPTIONS", u"TOKENS", u"CHANNELS", u"IMPORT", 
-                  u"FRAGMENT", u"LEXER", u"PARSER", u"GRAMMAR", u"PROTECTED", 
-                  u"PUBLIC", u"PRIVATE", u"RETURNS", u"LOCALS", u"THROWS", 
-                  u"CATCH", u"FINALLY", u"MODE", u"COLON", u"COLONCOLON", 
-                  u"COMMA", u"SEMI", u"LPAREN", u"RPAREN", u"LBRACE", u"RBRACE", 
-                  u"RARROW", u"LT", u"GT", u"ASSIGN", u"QUESTION", u"STAR", 
-                  u"PLUS_ASSIGN", u"PLUS", u"OR", u"DOLLAR", u"RANGE", u"DOT", 
-                  u"AT", u"POUND", u"NOT", u"ID", u"WS", u"ERRCHAR", u"Ws", 
-                  u"Hws", u"Vws", u"BlockComment", u"DocComment", u"LineComment", 
-                  u"EscSeq", u"EscAny", u"UnicodeEsc", u"DecimalNumeral", 
-                  u"HexDigit", u"DecDigit", u"BoolLiteral", u"CharLiteral", 
-                  u"SQuoteLiteral", u"DQuoteLiteral", u"USQuoteLiteral", 
-                  u"NameChar", u"NameStartChar", u"Int", u"Esc", u"Colon", 
-                  u"DColon", u"SQuote", u"DQuote", u"LParen", u"RParen", 
-                  u"LBrace", u"RBrace", u"LBrack", u"RBrack", u"RArrow", 
-                  u"Lt", u"Gt", u"Equal", u"Question", u"Star", u"Plus", 
-                  u"PlusAssign", u"Underscore", u"Pipe", u"Dollar", u"Comma", 
-                  u"Semi", u"Dot", u"Range", u"At", u"Pound", u"Tilde", 
-                  u"NESTED_ARGUMENT", u"ARGUMENT_ESCAPE", u"ARGUMENT_STRING_LITERAL", 
-                  u"ARGUMENT_CHAR_LITERAL", u"END_ARGUMENT", u"UNTERMINATED_ARGUMENT", 
-                  u"ARGUMENT_CONTENT", u"NESTED_ACTION", u"ACTION_ESCAPE", 
-                  u"ACTION_STRING_LITERAL", u"ACTION_CHAR_LITERAL", u"ACTION_DOC_COMMENT", 
-                  u"ACTION_BLOCK_COMMENT", u"ACTION_LINE_COMMENT", u"END_ACTION", 
-                  u"UNTERMINATED_ACTION", u"ACTION_CONTENT", u"OPT_DOC_COMMENT", 
-                  u"OPT_BLOCK_COMMENT", u"OPT_LINE_COMMENT", u"OPT_LBRACE", 
-                  u"OPT_RBRACE", u"OPT_ID", u"OPT_DOT", u"OPT_ASSIGN", u"OPT_STRING_LITERAL", 
-                  u"OPT_INT", u"OPT_STAR", u"OPT_SEMI", u"OPT_WS", u"TOK_DOC_COMMENT", 
-                  u"TOK_BLOCK_COMMENT", u"TOK_LINE_COMMENT", u"TOK_LBRACE", 
-                  u"TOK_RBRACE", u"TOK_ID", u"TOK_DOT", u"TOK_COMMA", u"TOK_WS", 
-                  u"CHN_DOC_COMMENT", u"CHN_BLOCK_COMMENT", u"CHN_LINE_COMMENT", 
-                  u"CHN_LBRACE", u"CHN_RBRACE", u"CHN_ID", u"CHN_DOT", u"CHN_COMMA", 
-                  u"CHN_WS", u"LEXER_CHAR_SET_BODY", u"LEXER_CHAR_SET", 
+    ruleNames = [ u"DOC_COMMENT", u"BLOCK_COMMENT", u"LINE_COMMENT", u"INT",
+                  u"STRING_LITERAL", u"UNTERMINATED_STRING_LITERAL", u"BEGIN_ARGUMENT",
+                  u"BEGIN_ACTION", u"OPTIONS", u"TOKENS", u"CHANNELS", u"IMPORT",
+                  u"FRAGMENT", u"LEXER", u"PARSER", u"GRAMMAR", u"PROTECTED",
+                  u"PUBLIC", u"PRIVATE", u"RETURNS", u"LOCALS", u"THROWS",
+                  u"CATCH", u"FINALLY", u"MODE", u"COLON", u"COLONCOLON",
+                  u"COMMA", u"SEMI", u"LPAREN", u"RPAREN", u"LBRACE", u"RBRACE",
+                  u"RARROW", u"LT", u"GT", u"ASSIGN", u"QUESTION", u"STAR",
+                  u"PLUS_ASSIGN", u"PLUS", u"OR", u"DOLLAR", u"RANGE", u"DOT",
+                  u"AT", u"POUND", u"NOT", u"ID", u"WS", u"ERRCHAR", u"Ws",
+                  u"Hws", u"Vws", u"BlockComment", u"DocComment", u"LineComment",
+                  u"EscSeq", u"EscAny", u"UnicodeEsc", u"DecimalNumeral",
+                  u"HexDigit", u"DecDigit", u"BoolLiteral", u"CharLiteral",
+                  u"SQuoteLiteral", u"DQuoteLiteral", u"USQuoteLiteral",
+                  u"NameChar", u"NameStartChar", u"Int", u"Esc", u"Colon",
+                  u"DColon", u"SQuote", u"DQuote", u"LParen", u"RParen",
+                  u"LBrace", u"RBrace", u"LBrack", u"RBrack", u"RArrow",
+                  u"Lt", u"Gt", u"Equal", u"Question", u"Star", u"Plus",
+                  u"PlusAssign", u"Underscore", u"Pipe", u"Dollar", u"Comma",
+                  u"Semi", u"Dot", u"Range", u"At", u"Pound", u"Tilde",
+                  u"NESTED_ARGUMENT", u"ARGUMENT_ESCAPE", u"ARGUMENT_STRING_LITERAL",
+                  u"ARGUMENT_CHAR_LITERAL", u"END_ARGUMENT", u"UNTERMINATED_ARGUMENT",
+                  u"ARGUMENT_CONTENT", u"NESTED_ACTION", u"ACTION_ESCAPE",
+                  u"ACTION_STRING_LITERAL", u"ACTION_CHAR_LITERAL", u"ACTION_DOC_COMMENT",
+                  u"ACTION_BLOCK_COMMENT", u"ACTION_LINE_COMMENT", u"END_ACTION",
+                  u"UNTERMINATED_ACTION", u"ACTION_CONTENT", u"OPT_DOC_COMMENT",
+                  u"OPT_BLOCK_COMMENT", u"OPT_LINE_COMMENT", u"OPT_LBRACE",
+                  u"OPT_RBRACE", u"OPT_ID", u"OPT_DOT", u"OPT_ASSIGN", u"OPT_STRING_LITERAL",
+                  u"OPT_INT", u"OPT_STAR", u"OPT_SEMI", u"OPT_WS", u"TOK_DOC_COMMENT",
+                  u"TOK_BLOCK_COMMENT", u"TOK_LINE_COMMENT", u"TOK_LBRACE",
+                  u"TOK_RBRACE", u"TOK_ID", u"TOK_DOT", u"TOK_COMMA", u"TOK_WS",
+                  u"CHN_DOC_COMMENT", u"CHN_BLOCK_COMMENT", u"CHN_LINE_COMMENT",
+                  u"CHN_LBRACE", u"CHN_RBRACE", u"CHN_ID", u"CHN_DOT", u"CHN_COMMA",
+                  u"CHN_WS", u"LEXER_CHAR_SET_BODY", u"LEXER_CHAR_SET",
                   u"UNTERMINATED_CHAR_SET", u"Id" ]
 
     grammarFileName = u"ANTLR4Lexer.g4"
@@ -606,9 +606,9 @@ class ANTLR4Lexer(LexerAdaptor):
     def action(self, localctx, ruleIndex, actionIndex):
     	if self._actions is None:
     		actions = dict()
-    		actions[6] = self.BEGIN_ARGUMENT_action 
-    		actions[104] = self.END_ARGUMENT_action 
-    		actions[114] = self.END_ACTION_action 
+    		actions[6] = self.BEGIN_ARGUMENT_action
+    		actions[104] = self.END_ARGUMENT_action
+    		actions[114] = self.END_ACTION_action
     		self._actions = actions
     	action = self._actions.get(ruleIndex, None)
     	if action is not None:
@@ -618,17 +618,14 @@ class ANTLR4Lexer(LexerAdaptor):
 
     def BEGIN_ARGUMENT_action(self, localctx , actionIndex):
         if actionIndex == 0:
-             handleBeginArgument(); 
-     
+             super(ANTLR4Lexer, self).handleBeginArgument();
+
 
     def END_ARGUMENT_action(self, localctx , actionIndex):
         if actionIndex == 1:
-             handleEndArgument(); 
-     
+             handleEndArgument();
+
 
     def END_ACTION_action(self, localctx , actionIndex):
         if actionIndex == 2:
-             handleEndAction(); 
-     
-
-
+             handleEndAction();
